@@ -122,8 +122,8 @@
   const rememberMe = ref(false);
 
   const formData = reactive({
-    account: 'jeecg',
-    password: '123456',
+    account: '',
+    password: '',
     inputCode: '',
   });
   const randCodeData = reactive({

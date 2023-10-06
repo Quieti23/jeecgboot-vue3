@@ -1,5 +1,5 @@
 <template>
-  <Card title="转化率" :loading="loading">
+  <Card title="操作系统分布" :loading="loading">
     <div ref="chartRef" :style="{ width, height }"></div>
   </Card>
 </template>
@@ -31,7 +31,7 @@
       setOptions({
         legend: {
           bottom: 0,
-          data: ['访问', '购买'],
+          data: ['云主机', '物理机'],
         },
         tooltip: {},
         radar: {
@@ -39,27 +39,27 @@
           splitNumber: 8,
           indicator: [
             {
-              text: '电脑',
+              text: 'bc-linux',
               max: 100,
             },
             {
-              text: '充电器',
+              text: 'CentOS',
               max: 100,
             },
             {
-              text: '耳机',
+              text: 'OpenEuler',
               max: 100,
             },
             {
-              text: '手机',
+              text: '其他',
               max: 100,
             },
             {
-              text: 'Ipad',
+              text: 'Anolis OS',
               max: 100,
             },
             {
-              text: '耳机',
+              text: 'Radhat',
               max: 100,
             },
           ],
