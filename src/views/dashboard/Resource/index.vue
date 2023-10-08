@@ -1,6 +1,6 @@
 <template>
   <IndexDef v-if="indexStyle === 0"></IndexDef>
-  <!-- <IndexChart v-if="indexStyle === 1"></IndexChart> -->
+  <IndexChart v-if="indexStyle === 1"></IndexChart>
   <IndexBdc v-if="indexStyle == 2"></IndexBdc>
   <IndexTask v-if="indexStyle == 3"></IndexTask>
   <!-- <div style="width: 100%; text-align: right; margin-top: 20px">
@@ -16,9 +16,9 @@
 <script lang="ts" setup>
   import { ref } from 'vue';
   import IndexDef from './homePage/IndexDef.vue';
-  // import IndexChart from './homePage/IndexChart.vue';
+  import IndexChart from './homePage/IndexChart.vue';
   import IndexBdc from './homePage/IndexBdc.vue';
   import IndexTask from './homePage/IndexTask.vue';
 
-  const indexStyle = ref(0);
+  const indexStyle = ref(1);
 </script>
