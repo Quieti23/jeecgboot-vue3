@@ -52,7 +52,7 @@ export const chartCardList: GrowCardItem[] = [
     // footer: '日均销售额',
   },
   {
-    title: '内存总量百分比',
+    title: '内存总量使用率',
     icon: 'total-sales|svg',
     // value: 1234,
     total: 88,
@@ -60,7 +60,7 @@ export const chartCardList: GrowCardItem[] = [
     // footer: '日订单量',
   },
   {
-    title: 'CPU总量百分比',
+    title: 'CPU总量使用率',
     icon: 'download-count|svg',
     // value: 60,
     total: 69,
@@ -68,7 +68,7 @@ export const chartCardList: GrowCardItem[] = [
     // footer: '转化率',
   },
   {
-    title: '存储百分比',
+    title: '存储总量使用率',
     icon: 'transaction|svg',
     total: 78,
   },

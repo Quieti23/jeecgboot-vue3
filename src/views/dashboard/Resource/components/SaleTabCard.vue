@@ -16,10 +16,10 @@
         <a-tab-pane loading="true" tab="云主机" key="1">
           <a-row>
             <a-col :xl="16" :lg="12" :md="12" :sm="24" :xs="24">
-              <Bar :chartData="barData" :option="{ title: { text: '月增加', textStyle: { fontWeight: 'lighter' } } }" height="40vh" />
+              <Bar :chartData="barData" :option="{ title: { text: '月新增', textStyle: { fontWeight: 'lighter' } } }" height="40vh" />
             </a-col>
             <a-col :xl="8" :lg="12" :md="12" :sm="24" :xs="24">
-              <RankList title="内存统计" :list="rankList" />
+              <RankList title="资源池数据" :list="rankList" />
             </a-col>
           </a-row>3
         </a-tab-pane>
@@ -38,7 +38,6 @@
   </a-card>
 </template>
 <script lang="ts" setup>
-  import { ref } from 'vue';
   import Bar from '/@/components/chart/Bar.vue';
   import RankList from '/@/components/chart/RankList.vue';
 
@@ -47,13 +46,28 @@
       type: Boolean,
     },
   });
-  const rankList = [];
-  for (let i = 0; i < 7; i++) {
-    rankList.push({
-      name: '白鹭岛 ' + (i + 1) + ' 号店',
-      total: 1234.56 - i * 100,
-    });
-  }
+  const rankList = [{
+      name: '内存',
+      total: 10
+    },{
+      name: 'CPU',
+      total: 10
+    },{
+      name: '存储',
+      total: 10
+    },{
+      name: '虚拟机',
+      total: 10
+    },{
+      name: 'VCPU',
+      total: 10
+    }];
+  // for (let i = 0; i < 7; i++) {
+  //   rankList.push({
+  //     name: '白鹭岛 ' + (i + 1) + ' 号店',
+  //     total: 1234.56 - i * 100,
+  //   });
+  // }
 
   const barData = [];
   for (let i = 0; i < 12; i += 1) {
