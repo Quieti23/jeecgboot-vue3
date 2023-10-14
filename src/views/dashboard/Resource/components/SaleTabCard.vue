@@ -3,15 +3,15 @@
     <div class="salesCard">
       <a-tabs default-active-key="1" size="large" :tab-bar-style="{ marginBottom: '24px', paddingLeft: '16px' }">
         <template #rightExtra>
-          <!-- <div class="extra-wrapper">
+          <div class="extra-wrapper">
             <div class="extra-item">
-              <a>今日</a>
+              <!-- <a>今日</a>
               <a>本周</a>
-              <a>本月</a>
-              <a>本年</a>
+              <a>本月</a> -->
+              <!-- <a>本年</a> -->
             </div>
-            <a-range-picker :style="{ width: '256px' }" />
-          </div> -->
+            
+          </div>
         </template>
         <a-tab-pane loading="true" tab="云主机" key="1">
           <a-row>
@@ -19,9 +19,10 @@
               <Bar :chartData="barData" :option="{ title: { text: '月新增', textStyle: { fontWeight: 'lighter' } } }" height="40vh" />
             </a-col>
             <a-col :xl="8" :lg="12" :md="12" :sm="24" :xs="24">
-              <RankList title="资源池数据" :list="rankList" />
+              
+              <RankList title="资源池数据(1-5期):" :list="rankList" />
             </a-col>
-          </a-row>3
+          </a-row>
         </a-tab-pane>
         <!-- <a-tab-pane tab="销售趋势" key="2">
           <a-row>

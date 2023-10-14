@@ -13,35 +13,6 @@
         <template #jAreaLinkage="{ model, field }">
           <JAreaLinkage v-model:value="model[field]" :showArea="true" :showAll="false" />
         </template>
-        <template #localSearch="{ model, field }">
-          <ApiSelect
-            :api="optionsListApi"
-            showSearch
-            v-model:value="model[field]"
-            optionFilterProp="label"
-            resultField="list"
-            labelField="name"
-            valueField="id"
-          />
-        </template>
-        <template #selectA="{ model, field }">
-          <a-select :options="optionsA" mode="multiple" v-model:value="model[field]" @change="valueSelectA = model[field]" allowClear />
-        </template>
-        <template #selectB="{ model, field }">
-          <a-select :options="optionsB" mode="multiple" v-model:value="model[field]" @change="valueSelectB = model[field]" allowClear />
-        </template>
-        <template #remoteSearch="{ model, field }">
-          <ApiSelect
-            :api="optionsListApi"
-            showSearch
-            v-model:value="model[field]"
-            :filterOption="false"
-            resultField="list"
-            labelField="name"
-            valueField="id"
-            @search="onSearch"
-          />
-        </template>
       </BasicForm>
     </CollapseContainer>
   </PageWrapper>
