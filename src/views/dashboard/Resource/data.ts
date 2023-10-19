@@ -43,13 +43,13 @@ export const growCardList: GrowCardItem[] = [
   },
 ];
 
-export const chartCardList: GrowCardItem[] = [
+export const chartCardList: GrowCardItem[][] = [[
   {
     title: '云主机月同比',
     icon: 'visit-count|svg',
-    total: 90,
+    total: 91,
     // value: 234.56,
-    // footer: '日均销售额',
+    footer: '一期',
   },
   {
     title: '内存总量使用率',
@@ -57,7 +57,7 @@ export const chartCardList: GrowCardItem[] = [
     // value: 1234,
     total: 88,
     // color: 'blue',
-    // footer: '日订单量',
+    footer: '一期',
   },
   {
     title: 'CPU总量使用率',
@@ -65,14 +65,105 @@ export const chartCardList: GrowCardItem[] = [
     // value: 60,
     total: 69,
     // color: 'orange',
-    // footer: '转化率',
+    footer: '一期',
   },
   {
     title: '存储总量使用率',
     icon: 'transaction|svg',
     total: 78,
+    footer: '一期',
   },
-];
+],[
+  {
+    title: '云主机月同比',
+    icon: 'visit-count|svg',
+    total: 92,
+    // value: 234.56,
+    footer: '二期',
+  },
+  {
+    title: '内存总量使用率',
+    icon: 'total-sales|svg',
+    // value: 1234,
+    total: 18,
+    // color: 'blue',
+    footer: '二期',
+  },
+  {
+    title: 'CPU总量使用率',
+    icon: 'download-count|svg',
+    // value: 60,
+    total: 59,
+    // color: 'orange',
+    footer: '二期',
+  },
+  {
+    title: '存储总量使用率',
+    icon: 'transaction|svg',
+    total: 18,
+    footer: '二期',
+  },
+],[
+  {
+    title: '云主机月同比',
+    icon: 'visit-count|svg',
+    total: 23,
+    // value: 234.56,
+    footer: '三期',
+  },
+  {
+    title: '内存总量使用率',
+    icon: 'total-sales|svg',
+    // value: 1234,
+    total: 18,
+    // color: 'blue',
+    footer: '三期',
+  },
+  {
+    title: 'CPU总量使用率',
+    icon: 'download-count|svg',
+    // value: 60,
+    total: 29,
+    // color: 'orange',
+    footer: '三期',
+  },
+  {
+    title: '存储总量使用率',
+    icon: 'transaction|svg',
+    total: 78,
+    footer: '三期',
+  },
+],[
+  {
+    title: '云主机月同比',
+    icon: 'visit-count|svg',
+    total: 94,
+    // value: 234.56,
+    footer: '四期',
+  },
+  {
+    title: '内存总量使用率',
+    icon: 'total-sales|svg',
+    // value: 1234,
+    total: 82,
+    // color: 'blue',
+    footer: '四期',
+  },
+  {
+    title: 'CPU总量使用率',
+    icon: 'download-count|svg',
+    // value: 60,
+    total: 79,
+    // color: 'orange',
+    footer: '四期',
+  },
+  {
+    title: '存储总量使用率',
+    icon: 'transaction|svg',
+    total: 68,
+    footer: '四期',
+  },
+]];
 export const bdcCardList: GrowCardItem[] = [
   {
     title: '受理量',

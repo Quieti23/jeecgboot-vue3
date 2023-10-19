@@ -50,7 +50,7 @@
 </template>
 <script lang="ts" setup>
   // import { ref, computed } from 'vue';
-  import { computed } from 'vue';
+  import { computed, onMounted, onUnmounted, ref } from 'vue';
   import { Icon } from '/@/components/Icon';
   import { Progress } from 'ant-design-vue';
   import ChartCard from '/@/components/chart/ChartCard.vue';
@@ -97,11 +97,31 @@
   //   },
   // ]);
 
-  const dataList = computed(() => (props.type === 'dbc' ? bdcCardList : chartCardList));
+
+  // 当前显示的数据索引
+  const currentIndex = ref(0);
+
+  // 存储setInterval的变量，以便之后可以清除
+  let slideInterval;
+
+  // 在组件加载时开始轮播
+  onMounted(() => {
+    slideInterval = setInterval(() => {
+      currentIndex.value = (currentIndex.value + 1) % chartCardList.length; // 循环轮播
+    }, 3000); // 每3秒切换
+  });
+
+  const dataList = computed(() => (props.type === 'dbc' ? bdcCardList : chartCardList[currentIndex.value]));
+
+  // 在组件卸载时清除轮播
+  onUnmounted(() => {
+    clearInterval(slideInterval);
+  });
 
   // function getTotal(total, index) {
   function getTotal(total) {
     // return index === 0 ? `￥${total}` : index === 3 ? `${total}%` : total;
     return `${total}%`;
   }
+  
 </script>
