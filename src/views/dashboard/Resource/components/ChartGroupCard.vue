@@ -32,7 +32,7 @@
 
           <Bar v-if="index === 3" :option="option" :chartData="chartData" height="50px"></Bar>
         </div> -->
-        <template #footer v-if="type === 'chart'">
+        <!-- <template #footer v-if="type === 'chart'">
           <span v-if="index !== 3"
             >{{ item.footer }}<span>{{ item.value }}</span></span
           >
@@ -43,6 +43,22 @@
           <span
             >{{ item.footer }}<span>{{ item.value }}</span></span
           >
+        </template> -->
+
+
+        <template #footer v-if="type === 'chart'">
+          <span
+            >{{ item.footer }}<span>{{ item.value }}</span></span
+          > 
+          <Trend term="周同比" :percentage="12" />
+          <Trend term="日同比" :percentage="11" />
+
+          <div class="indicators">
+            <button v-for="(item, index) in items" :key="index" 
+                    @click="setIndex(index)"
+                    :class="{ active: index === currentIndex }" aria-label="Go to slide {{index + 1}}">
+            </button>
+          </div>
         </template>
       </ChartCard>
     </template>
@@ -97,6 +113,10 @@
   //   },
   // ]);
 
+    // 新方法：处理指示器点击，切换到对应的项
+    const setIndex = (newIndex) => {
+      currentIndex.value = newIndex;
+    };
 
   // 当前显示的数据索引
   const currentIndex = ref(0);
@@ -108,11 +128,12 @@
   onMounted(() => {
     slideInterval = setInterval(() => {
       currentIndex.value = (currentIndex.value + 1) % chartCardList.length; // 循环轮播
-    }, 3000); // 每3秒切换
+    }, 5000); // 每5秒切换
   });
 
   const dataList = computed(() => (props.type === 'dbc' ? bdcCardList : chartCardList[currentIndex.value]));
 
+  const items = ref(dataList);
   // 在组件卸载时清除轮播
   onUnmounted(() => {
     clearInterval(slideInterval);
@@ -125,3 +146,27 @@
   }
   
 </script>
+
+<style lang="less" scoped>
+.indicators {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+.indicators button {
+  background-color: gray; /* 非活动圆点的颜色 */
+  border: none; /* 移除边框 */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* 圆形效果 */
+  margin: 0 5px;
+  padding: 0; /* 移除内边距 */
+  cursor: pointer;
+}
+.indicators button.active {
+  background-color: black; /* 活动圆点的颜色 */
+}
+.indicators button:focus {
+  outline: none; /* 如果你不希望在聚焦时有外边框，可以添加这一行 */
+}
+</style>
